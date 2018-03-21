@@ -17,12 +17,12 @@ $ bower install --save valle-table
 
 ```html
 <link rel="import" href="bower_components/valle-table/valle-table.html">
+<link rel="import" href="bower_components/valle-table/valle-thead.html">
+<link rel="import" href="bower_components/valle-table/valle-th.html">
 <link rel="import" href="bower_components/valle-table/valle-tbody.html">
+<link rel="import" href="bower_components/valle-table/valle-tr.html">
 <link rel="import" href="bower_components/valle-table/valle-td.html">
 <link rel="import" href="bower_components/valle-table/valle-tfooter.html">
-<link rel="import" href="bower_components/valle-table/valle-th.html">
-<link rel="import" href="bower_components/valle-table/valle-thead.html">
-<link rel="import" href="bower_components/valle-table/valle-tr.html">
 ```
 
 3 - Start using it!
@@ -46,28 +46,61 @@ $ bower install --save valle-table
 
 ```html
 <valle-table>
+
   <valle-thead>
-    <valle-th></valle-th>
-    <valle-th></valle-th>
+
+    <valle-tr>
+      <valle-th> Value </valle-th>
+      <valle-th> Size </valle-th>
+    </valle-tr>
+
   </valle-thead>
+
   <valle-tbody>
+
     <valle-tr>
-      <valle-td></valle-td>
-      <valle-td></valle-td>
+      <valle-td> 12cm </valle-td>
+      <valle-td> 15kg </valle-td>
     </valle-tr>
+
     <valle-tr>
-      <valle-td></valle-td>
-      <valle-td></valle-td>
+      <valle-td> 13cm </valle-td>
+      <valle-td> 10kg </valle-td>
     </valle-tr>
+
   </valle-tbody>
+
   <valle-tfooter>
-    <valle-th></valle-th>
-    <valle-th></valle-th>
+
+    <valle-tr>
+      <valle-th> Value </valle-th>
+      <valle-th> Size </valle-th>
+    </valle-tr>
+
   </valle-tfooter>
+
 </valle-table>
 ```
 
+## Results
+
+![valle-table demo](demo/demo.png)
+
+## Components
+
+- [valle-table](#valle-table)
+- [valle-thead](#valle-thead)
+- [valle-th](#valle-th)
+- [valle-tbody](#valle-tbody)
+- [valle-tr](#valle-tr)
+- [valle-td](#valle-td)
+- [valle-tfooter](#valle-tfooter)
+
+<hr>
+
 ## valle-table
+
+The custom `<valle-table>` element represents tabular data — that is, information expressed via a two-dimensional data table.
 
 ### Properties
 
@@ -75,7 +108,13 @@ Property  | Type        | Default | Description
 :---      |:---         |:---     |:---
 `label`   | *String*    | `""`    | table label (Other element ID)
 
-## valle-tbody
+See more about original `table` element [here.](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table)
+
+<hr>
+
+## valle-thead
+
+The custom `<valle-thead>` element defines a set of rows defining the head of the columns of the table.
 
 ### Properties
 
@@ -83,32 +122,13 @@ Property  | Type       | Default | Description
 :---      |:---        |:---     |:---
 `-----`   | *-----*    | `-----` | -----
 
-## valle-td
+See more about original `thead` element [here.](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead)
 
-### Properties
-
-Property  | Type        | Default | Description
-:---      |:---         |:---     |:---
-`label`   | *String*    | `""`    | td label (Thead ID)
-
-### Styling
-
-The following custom properties and mixins are available for styling:
-
-Custom property             | Default          | Description
-:---                        |:---              |:---
---valle-td-text-size        | `13px`           | Font size
---valle-td-text-color       | `rgba(0,0,0,.54)`| Text color
-
-## valle-tfooter
-
-### Properties
-
-Property  | Type       | Default | Description
-:---      |:---        |:---     |:---
-`-----`   | *-----*    | `-----` | -----
+<hr>
 
 ## valle-th
+
+The custom `<valle-th>` element defines a cell as header of a group of table cells. The exact nature of this group is defined by the scope and headers attributes.
 
 ### Properties
 
@@ -125,21 +145,74 @@ Custom property             | Default          | Description
 --valle-th-text-size        | `13px`           | Font size
 --valle-th-text-color       | `rgba(0,0,0,.54)`| Text color
 
-## valle-thead
+See more about original `th` element [here.](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th)
+
+<hr>
+
+## valle-tbody
+
+The custom `<valle-tbody>` element groups one or more `<valle-tr>` elements as the body of a `<valle-table>` element.
 
 ### Properties
 
 Property  | Type       | Default | Description
 :---      |:---        |:---     |:---
 `-----`   | *-----*    | `-----` | -----
+
+See more about original `tbody` element [here.](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody)
+
+<hr>
 
 ## valle-tr
 
+The custom `<valle-tr>` element defines a row of cells in a table. Those can be a mix of `<valle-td>` and `<valle-th>` elements.
+
 ### Properties
 
 Property  | Type       | Default | Description
 :---      |:---        |:---     |:---
 `-----`   | *-----*    | `-----` | -----
+
+See more about original `tr` element [here.](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr)
+
+<hr>
+
+## valle-td
+
+The custom `<valle-td>` element defines a cell of a table that contains data. It participates in the table model.
+
+### Properties
+
+Property  | Type        | Default | Description
+:---      |:---         |:---     |:---
+`label`   | *String*    | `""`    | td label (Thead ID)
+
+### Styling
+
+The following custom properties and mixins are available for styling:
+
+Custom property             | Default          | Description
+:---                        |:---              |:---
+--valle-td-text-size        | `13px`           | Font size
+--valle-td-text-color       | `rgba(0,0,0,.54)`| Text color
+
+See more about original `th` element [here.](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td)
+
+<hr>
+
+## valle-tfooter
+
+The custom `<valle-tfooter>` element defines a set of rows summarizing the columns of the table.
+
+### Properties
+
+Property  | Type       | Default | Description
+:---      |:---        |:---     |:---
+`-----`   | *-----*    | `-----` | -----
+
+See more about original `tfoot` element [here.](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot)
+
+<hr>
 
 ## Browser Support
 
