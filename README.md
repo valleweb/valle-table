@@ -18,6 +18,7 @@ $ bower install --save valle-table
 ```html
 <link rel="import" href="bower_components/valle-table/valle-table.html">
 <link rel="import" href="bower_components/valle-table/valle-tbody.html">
+<link rel="import" href="bower_components/valle-table/valle-td.html">
 ```
 
 3 - Start using it!
@@ -28,6 +29,7 @@ $ bower install --save valle-table
   <template>
     <link rel="import" href="valle-table.html">
     <link rel="import" href="valle-tbody.html">
+    <link rel="import" href="valle-td.html">
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
@@ -36,7 +38,10 @@ $ bower install --save valle-table
 
 ```html
 <valle-table>
-  <valle-tbody></valle-tbody>  
+  <valle-tbody>
+    <valle-td></valle-td>
+    <valle-td></valle-td>
+  </valle-tbody>
 </valle-table>
 ```
 
@@ -46,7 +51,7 @@ $ bower install --save valle-table
 
 Property  | Type        | Default | Description
 :---      |:---         |:---     |:---
-`label`   | *String*    | `""`    | Table label (Other element ID)
+`label`   | *String*    | `""`    | table label (Other element ID)
 
 ## valle-tbody
 
@@ -55,6 +60,23 @@ Property  | Type        | Default | Description
 Property  | Type       | Default | Description
 :---      |:---        |:---     |:---
 `-----`   | *-----*    | `-----` | -----
+
+## valle-td
+
+### Properties
+
+Property  | Type        | Default | Description
+:---      |:---         |:---     |:---
+`label`   | *String*    | `""`    | td label (Thead ID)
+
+### Styling
+
+The following custom properties and mixins are available for styling:
+
+Custom property             | Default          | Description
+:---                        |:---              |:---
+--valle-td-text-size        | `13px`           | Font size
+--valle-td-text-color       | `rgba(0,0,0,.54)`| Text color
 
 ## Browser Support
 
