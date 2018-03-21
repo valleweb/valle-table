@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>valle-table test</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../../polymer/polymer.html">
+    <link rel="import" href="../valle-table.html">
+  </head>
+  <body>
+
+    <test-fixture id="basicTable">
+      <template>
+        <valle-table></valle-table>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="labelTable">
+      <template>
+        <valle-table label="tableTitle"></valle-table>
+      </template>
+    </test-fixture>
+
+    <script>
+
+      suite('valle-table basic', () => {
+
+        let basicTable;
+
+        setup(() => {
+          basicTable = fixture('basicTable');
+        });
+
+        test('Should render the table with correct display style', () => {
+          const display = window.getComputedStyle(basicTable).display;
+          assert.equal(display, 'table');
+        });
+
+      });
+
+      suite('valle-table a11y', () => {
+
+        let labelTable;
+
+        setup(() => {
+          labelTable  = fixture('labelTable');
+        });
+
+        test('Should render the table with correct aria role', () => {
+          const role = labelTable.getAttribute('role');
+          assert.equal(role, 'grid');
+        });
+
+        test('Should render the table with correct aria label', () => {
+          const label = labelTable.getAttribute('aria-labelledby');
+          assert.equal(label, 'tableTitle');
+        });
+
+      });
+
+    </script>
+
+  </body>
+</html>

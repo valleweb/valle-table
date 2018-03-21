@@ -10,7 +10,7 @@
 1 - Install the element using [Bower](http://bower.io/):
 
 ```sh
-$ bower install valle-table --save
+$ bower install --save valle-table
 ```
 
 2 -  Import the element:
@@ -36,21 +36,13 @@ $ bower install valle-table --save
 <valle-table></valle-table>
 ```
 
-## Properties
+## valle-table
 
-Property  | Type        | Default   | Description
-:---      |:---         |:---       |:---
-`prop1`   | *String*    | `World`   | Prop description
+### Properties
 
-## Styling
-
-The following custom properties and mixins are available for styling:
-
-Custom property                | Default  | Description
-:---                           |:---      |:---
---valle-element-text-color       | #f44277  | Text color
---valle-element-text             | {}       | Text styles
-
+Property  | Type        | Default | Description
+:---      |:---         |:---     |:---
+`label`   | *String*    | `""`    | Table label (Other element ID)
 
 ## Browser Support
 
