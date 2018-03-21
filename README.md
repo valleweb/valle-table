@@ -13,10 +13,11 @@
 $ bower install --save valle-table
 ```
 
-2 -  Import the element:
+2 -  Import the elements:
 
 ```html
 <link rel="import" href="bower_components/valle-table/valle-table.html">
+<link rel="import" href="bower_components/valle-table/valle-tbody.html">
 ```
 
 3 - Start using it!
@@ -26,6 +27,7 @@ $ bower install --save valle-table
 <custom-element-demo>
   <template>
     <link rel="import" href="valle-table.html">
+    <link rel="import" href="valle-tbody.html">
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
@@ -33,7 +35,9 @@ $ bower install --save valle-table
 -->
 
 ```html
-<valle-table></valle-table>
+<valle-table>
+  <valle-tbody></valle-tbody>  
+</valle-table>
 ```
 
 ## valle-table
@@ -43,6 +47,14 @@ $ bower install --save valle-table
 Property  | Type        | Default | Description
 :---      |:---         |:---     |:---
 `label`   | *String*    | `""`    | Table label (Other element ID)
+
+## valle-tbody
+
+### Properties
+
+Property  | Type       | Default | Description
+:---      |:---        |:---     |:---
+`-----`   | *-----*    | `-----` | -----
 
 ## Browser Support
 
