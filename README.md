@@ -22,6 +22,7 @@ $ bower install --save valle-table
 <link rel="import" href="bower_components/valle-table/valle-tfooter.html">
 <link rel="import" href="bower_components/valle-table/valle-th.html">
 <link rel="import" href="bower_components/valle-table/valle-thead.html">
+<link rel="import" href="bower_components/valle-table/valle-tr.html">
 ```
 
 3 - Start using it!
@@ -36,6 +37,7 @@ $ bower install --save valle-table
     <link rel="import" href="valle-tfooter.html">
     <link rel="import" href="valle-th.html">
     <link rel="import" href="valle-thead.html">
+    <link rel="import" href="valle-tr.html">
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
@@ -49,8 +51,14 @@ $ bower install --save valle-table
     <valle-th></valle-th>
   </valle-thead>
   <valle-tbody>
-    <valle-td></valle-td>
-    <valle-td></valle-td>
+    <valle-tr>
+      <valle-td></valle-td>
+      <valle-td></valle-td>
+    </valle-tr>
+    <valle-tr>
+      <valle-td></valle-td>
+      <valle-td></valle-td>
+    </valle-tr>
   </valle-tbody>
   <valle-tfooter>
     <valle-th></valle-th>
@@ -118,6 +126,14 @@ Custom property             | Default          | Description
 --valle-th-text-color       | `rgba(0,0,0,.54)`| Text color
 
 ## valle-thead
+
+### Properties
+
+Property  | Type       | Default | Description
+:---      |:---        |:---     |:---
+`-----`   | *-----*    | `-----` | -----
+
+## valle-tr
 
 ### Properties
 
