@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>valle-tfooter test</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../../polymer/polymer.html">
+    <link rel="import" href="../valle-table.html">
+    <link rel="import" href="../valle-tfooter.html">
+  </head>
+  <body>
+
+    <test-fixture id="basicTfooter">
+      <template>
+        <valle-tfooter></valle-tfooter>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="scoped">
+      <template>
+        <h4 id="tableTitle"> Awesome table </h4>
+        <valle-table label="tableTitle">
+          <valle-tfooter></valle-tfooter>
+        </valle-table>
+      </template>
+    </test-fixture>
+
+    <script>
+
+      suite('valle-tfooter basic', () => {
+
+        let basicTfooter;
+
+        setup(() => {
+           basicTfooter = fixture('basicTfooter');
+        });
+
+        test('Should render the tfooter with correct display style', () => {
+          const display = window.getComputedStyle(basicTfooter).display;
+          assert.equal(display, 'table-footer-group');
+        });
+
+      });
+
+      suite('valle-tfooter a11y', () => {
+
+        let basicTfooter;
+
+        setup(() => {
+          basicTfooter  = fixture('basicTfooter');
+        });
+
+        test('Should render the tfooter with correct aria role', () => {
+          const role = basicTfooter.getAttribute('role');
+          assert.equal(role, 'rowgroup');
+        });
+
+        a11ySuite('scoped');
+
+      });
+
+    </script>
+
+  </body>
+</html>
