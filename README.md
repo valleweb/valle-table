@@ -20,6 +20,7 @@ $ bower install --save valle-table
 <link rel="import" href="bower_components/valle-table/valle-tbody.html">
 <link rel="import" href="bower_components/valle-table/valle-td.html">
 <link rel="import" href="bower_components/valle-table/valle-tfooter.html">
+<link rel="import" href="bower_components/valle-table/valle-th.html">
 ```
 
 3 - Start using it!
@@ -32,6 +33,7 @@ $ bower install --save valle-table
     <link rel="import" href="valle-tbody.html">
     <link rel="import" href="valle-td.html">
     <link rel="import" href="valle-tfooter.html">
+    <link rel="import" href="valle-th.html">
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
@@ -45,8 +47,8 @@ $ bower install --save valle-table
     <valle-td></valle-td>
   </valle-tbody>
   <valle-tfooter>
-    <valle-td></valle-td>
-    <valle-td></valle-td>
+    <valle-th></valle-th>
+    <valle-th></valle-th>
   </valle-tfooter>
 </valle-table>
 ```
@@ -91,6 +93,23 @@ Custom property             | Default          | Description
 Property  | Type       | Default | Description
 :---      |:---        |:---     |:---
 `-----`   | *-----*    | `-----` | -----
+
+## valle-th
+
+### Properties
+
+Property  | Type       | Default | Description
+:---      |:---        |:---     |:---
+`-----`   | *-----*    | `-----` | -----
+
+### Styling
+
+The following custom properties and mixins are available for styling:
+
+Custom property             | Default          | Description
+:---                        |:---              |:---
+--valle-th-text-size        | `13px`           | Font size
+--valle-th-text-color       | `rgba(0,0,0,.54)`| Text color
 
 ## Browser Support
 
