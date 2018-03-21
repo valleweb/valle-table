@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>valle-thead test</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../../polymer/polymer.html">
+    <link rel="import" href="../valle-table.html">
+    <link rel="import" href="../valle-thead.html">
+  </head>
+  <body>
+
+    <test-fixture id="basicThead">
+      <template>
+        <valle-thead></valle-thead>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="scoped">
+      <template>
+        <h4 id="tableTitle"> Awesome table </h4>
+        <valle-table label="tableTitle">
+          <valle-thead></valle-thead>
+        </valle-table>
+      </template>
+    </test-fixture>
+
+    <script>
+
+      suite('valle-thead basic', () => {
+
+        let basicThead;
+
+        setup(() => {
+           basicThead = fixture('basicThead');
+        });
+
+        test('Should render the thead with correct display style', () => {
+          const display = window.getComputedStyle(basicThead).display;
+          assert.equal(display, 'table-header-group');
+        });
+
+      });
+
+      suite('valle-thead a11y', () => {
+
+        let basicThead;
+
+        setup(() => {
+          basicThead  = fixture('basicThead');
+        });
+
+        test('Should render the thead with correct aria role', () => {
+          const role = basicThead.getAttribute('role');
+          assert.equal(role, 'rowgroup');
+        });
+
+        a11ySuite('scoped');
+
+      });
+
+    </script>
+
+  </body>
+</html>
