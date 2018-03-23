@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="valle-tbody">
+  <template>
+
+    <style>
+      :host {
+        display: table-row-group;
+      }
+    </style>
+
+    <slot></slot>
+
+  </template>
+
+  <script>
+    class valleTBody extends Polymer.Element {
+
+      static get is() { 
+        return 'valle-tbody'; 
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+
+        this.setAttribute('role', 'rowgroup');
+
+      }
+
+    }
+
+    window.customElements.define(valleTBody.is, valleTBody);
+  </script>
+</dom-module>

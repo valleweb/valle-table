@@ -9,7 +9,15 @@
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
     <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+
     <link rel="import" href="../valle-table.html">
+    <link rel="import" href="../valle-thead.html">
+    <link rel="import" href="../valle-th.html">
+    <link rel="import" href="../valle-tbody.html">
+    <link rel="import" href="../valle-tr.html">
+    <link rel="import" href="../valle-td.html">
+    <link rel="import" href="../valle-tfooter.html">
+
   </head>
 
   <body>
@@ -32,41 +40,41 @@
 
       <demo-snippet class="centered-demo">
         <template>
+          <valle-table>
 
-          <valle-table></valle-table>
-
-        </template>
-      </demo-snippet>
-
-      <!-- With Prop - demo
-      ========================= -->
-
-      <h2>With Prop</h2>
-
-      <demo-snippet class="centered-demo">
-        <template>
-
-          <valle-table prop1="Human"></valle-table>
-
-        </template>
-      </demo-snippet>
-
-      <!-- Custom style - demo
-      ========================= -->
-
-      <h2>Custom style</h2>
-
-      <demo-snippet class="centered-demo">
-        <template>
-
-        <style is="custom-style">
-          .shiny {
-            --vsc-element-text-color: #a1f442;
-          }
-        </style>
-
-          <valle-table class="shiny"></valle-table>
-
+            <valle-thead>
+          
+              <valle-tr>
+                <valle-th> Value </valle-th>
+                <valle-th> Size </valle-th>
+              </valle-tr>
+          
+            </valle-thead>
+          
+            <valle-tbody>
+          
+              <valle-tr>
+                <valle-td> 12cm </valle-td>
+                <valle-td> 15kg </valle-td>
+              </valle-tr>
+          
+              <valle-tr>
+                <valle-td> 13cm </valle-td>
+                <valle-td> 10kg </valle-td>
+              </valle-tr>
+          
+            </valle-tbody>
+          
+            <valle-tfooter>
+          
+              <valle-tr>
+                <valle-th> Value </valle-th>
+                <valle-th> Size </valle-th>
+              </valle-tr>
+          
+            </valle-tfooter>
+          
+          </valle-table>
         </template>
       </demo-snippet>
 

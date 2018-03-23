@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>valle-tr test</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../../polymer/polymer.html">
+    <link rel="import" href="../valle-table.html">
+    <link rel="import" href="../valle-tr.html">
+  </head>
+  <body>
+
+    <test-fixture id="basicTr">
+      <template>
+        <valle-tr></valle-tr>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="scoped">
+      <template>
+        <h4 id="tableTitle"> Awesome table </h4>
+        <valle-table label="tableTitle">
+          <valle-tr></valle-tr>
+        </valle-table>
+      </template>
+    </test-fixture>
+
+    <script>
+
+      suite('valle-tr basic', () => {
+
+        let basicTr;
+
+        setup(() => {
+           basicTr = fixture('basicTr');
+        });
+
+        test('Should render the tr with correct display style', () => {
+          const display = window.getComputedStyle(basicTr).display;
+          assert.equal(display, 'table-row');
+        });
+
+      });
+
+      suite('valle-tr a11y', () => {
+
+        let basicTr;
+
+        setup(() => {
+          basicTr  = fixture('basicTr');
+        });
+
+        test('Should render the tr with correct aria role', () => {
+          const role = basicTr.getAttribute('role');
+          assert.equal(role, 'row');
+        });
+
+        a11ySuite('scoped');
+
+      });
+
+    </script>
+
+  </body>
+</html>

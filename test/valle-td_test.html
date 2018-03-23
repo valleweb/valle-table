@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>valle-td test</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+
+    <link rel="import" href="../../polymer/polymer.html">
+    <link rel="import" href="../valle-table.html">
+    <link rel="import" href="../valle-td.html">
+  </head>
+  <body>
+
+    <test-fixture id="basicTd">
+      <template>
+        <valle-td label="header"></valle-td>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="scoped">
+      <template>
+        <h4 id="tableTitle"> Awesome table </h4>
+        <valle-table label="tableTitle">
+          <valle-td label="header"> header </valle-td>
+        </valle-table>
+      </template>
+    </test-fixture>
+
+    <script>
+
+      suite('valle-td basic', () => {
+
+        let basicTd;
+
+        setup(() => {
+           basicTd = fixture('basicTd');
+        });
+
+        test('Should render the th with correct display style', () => {
+          const display = window.getComputedStyle(basicTd).display;
+          assert.equal(display, 'table-cell');
+        });
+
+      });
+
+      suite('valle-td a11y', () => {
+
+        let basicTd;
+
+        setup(() => {
+          basicTd  = fixture('basicTd');
+        });
+
+        test('Should render the td with correct aria role', () => {
+          const role = basicTd.getAttribute('role');
+          assert.equal(role, 'gridcell');
+        });
+
+        test('Should render the td with correct tabindex', () => {
+          const tabindex = basicTd.getAttribute('tabindex');
+          assert.equal(tabindex, '-1');
+        });
+
+        test('Should render the td with correct aria label', () => {
+          const ariaLabel = basicTd.getAttribute('aria-labelledby');
+          assert.equal(ariaLabel, 'header');
+        });
+
+        a11ySuite('scoped');
+
+      });
+
+    </script>
+
+  </body>
+</html>

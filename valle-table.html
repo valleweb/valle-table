@@ -4,38 +4,41 @@
   <template>
 
     <style>
-
       :host {
-        display: block;
+        display: table;
       }
-
-      h1 {
-        @apply (--valle-element-text);
-        color: var(--valle-element-text-color, #f44277);
-      }
-
     </style>
 
-    <h1>Hello [[prop1]]!</h1>
+    <slot></slot>
 
   </template>
 
   <script>
-    class valleElement extends Polymer.Element {
+    class valleTable extends Polymer.Element {
 
-      static get is() { return 'valle-table'; }
+      static get is() { 
+        return 'valle-table'; 
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+
+        this.setAttribute('role', 'grid');
+        this.setAttribute('aria-labelledby', this.label);
+
+      }
 
       static get properties() {
         return {
-          prop1: {
+          label: {
             type: String,
-            value: 'World'
+            value: ''
           }
         };
       }
 
     }
 
-    window.customElements.define(valleElement.is, valleElement);
+    window.customElements.define(valleTable.is, valleTable);
   </script>
 </dom-module>

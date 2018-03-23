@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="valle-thead">
+  <template>
+
+    <style>
+      :host {
+        display: table-header-group;
+      }
+    </style>
+
+    <slot></slot>
+
+  </template>
+
+  <script>
+    class valleTHead extends Polymer.Element {
+
+      static get is() { 
+        return 'valle-thead'; 
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+
+        this.setAttribute('role', 'rowgroup');
+
+      }
+
+    }
+
+    window.customElements.define(valleTHead.is, valleTHead);
+  </script>
+</dom-module>

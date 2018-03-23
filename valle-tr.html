@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="valle-tr">
+  <template>
+
+    <style>
+      :host {
+        display: table-row;
+      }
+    </style>
+
+    <slot></slot>
+
+  </template>
+
+  <script>
+    class valleTr extends Polymer.Element {
+
+      static get is() { 
+        return 'valle-tr'; 
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+
+        this.setAttribute('role', 'row');
+
+      }
+
+    }
+
+    window.customElements.define(valleTr.is, valleTr);
+  </script>
+</dom-module>

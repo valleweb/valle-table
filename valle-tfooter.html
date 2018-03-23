@@ -1,0 +1,34 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="valle-tfooter">
+  <template>
+
+    <style>
+      :host {
+        display: table-footer-group;
+      }
+    </style>
+
+    <slot></slot>
+
+  </template>
+
+  <script>
+    class valleTFooter extends Polymer.Element {
+
+      static get is() { 
+        return 'valle-tfooter'; 
+      }
+
+      connectedCallback() {
+        super.connectedCallback();
+
+        this.setAttribute('role', 'rowgroup');
+
+      }
+
+    }
+
+    window.customElements.define(valleTFooter.is, valleTFooter);
+  </script>
+</dom-module>
