@@ -1,28 +1,28 @@
 # valle-table
 
-> Awesome valle table with material design
+> Awesome valle-table - web component using Polymer 3
 
-[![Travis CI Status](https://travis-ci.org/valleweb/valle-table.svg?branch=master)](https://travis-ci.org/valleweb/valle-table)
-[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/valleweb/valle-table)
+[![npm](https://img.shields.io/npm/v/@valle/valle-table.svg)](https://www.npmjs.com/package/@valle/valle-table)
+[![Published on webcomponents.org](https://img.shields.io/badge/webcomponents.org-published-blue.svg)](https://www.webcomponents.org/element/@valle/valle-table)
 
 ## How to install and use:
 
-1 - Install the element using [Bower](http://bower.io/):
+1 - Install the element using [Yarn](http://yarn.io/):
 
 ```sh
-$ bower install --save valle-table
+$ yarn add @valle/valle-table
 ```
 
-2 -  Import the elements:
+2 -  Import the element:
 
 ```html
-<link rel="import" href="bower_components/valle-table/valle-table.html">
-<link rel="import" href="bower_components/valle-table/valle-thead.html">
-<link rel="import" href="bower_components/valle-table/valle-th.html">
-<link rel="import" href="bower_components/valle-table/valle-tbody.html">
-<link rel="import" href="bower_components/valle-table/valle-tr.html">
-<link rel="import" href="bower_components/valle-table/valle-td.html">
-<link rel="import" href="bower_components/valle-table/valle-tfooter.html">
+<script type="module" src="node_modules/@valle/valle-table/main.js"></script>
+```
+
+or in your javascript file
+
+```js
+import "@valle/valle-table/main.js";
 ```
 
 3 - Start using it!
@@ -31,13 +31,7 @@ $ bower install --save valle-table
 ```
 <custom-element-demo>
   <template>
-    <link rel="import" href="valle-table.html">
-    <link rel="import" href="valle-tbody.html">
-    <link rel="import" href="valle-td.html">
-    <link rel="import" href="valle-tfooter.html">
-    <link rel="import" href="valle-th.html">
-    <link rel="import" href="valle-thead.html">
-    <link rel="import" href="valle-tr.html">
+    <script type="module" src="main.js"></script>
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
@@ -81,10 +75,6 @@ $ bower install --save valle-table
 
 </valle-table>
 ```
-
-## Results
-
-![valle-table demo](demo/demo.png)
 
 ## Components
 
@@ -224,58 +214,24 @@ Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 11+ | Latest ✔
 
 ## Development
 
-1 - Install [Bower](http://bower.io/) & [Polymer-CLI](https://www.polymer-project.org/1.0/docs/tools/polymer-cli):
+1 - Verify if you have [node](http://nodejs.org/) and [yarn](http://yarn.io/) installed.
+
+2 - Install [Polymer-CLI](https://www.polymer-project.org/3.0/docs/tools/polymer-cli):
 
 ```sh
-$ [sudo] yarn global add bower polymer-cli
+$ [sudo] yarn global add polymer-cli
 ```
 
-2 - Install local dependencies:
+3 - Install local dependencies:
 
 ```sh
-$ bower install
+$ yarn
 ```
 
-3 - Start the development server:
+4 - Start the development server:
 
 ```sh
-$ polymer serve
-```
-
-Go to [localhost:8080/components/valle-table/](http://localhost:8080/components/valle-table/)
-
-
-## Tests
-
-#### Linting
-
-Linting with eslint:
-
-```sh
-$ [sudo] yarn global add eslint
-$ [sudo] yarn global add eslint-plugin-html
-
-$ eslint *.html
-```
-
-Linting with polylint:
-
-```sh
-$ polymer lint
-```
-
-#### Unit tests
-
-Install the Web Component Tester (WCT) test runner:
-
-```sh
-$ [sudo] yarn global add web-component-tester
-```
-
-Run tests:
-
-```sh
-$ wct
+$ yarn start
 ```
 
 ## Versioning
