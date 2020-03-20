@@ -6,7 +6,7 @@ export default class ValleTFooter extends PolymerElement {
       <style>
         :host {
           display: table-footer-group;
-        };
+        }
       </style>
 
       <slot></slot>

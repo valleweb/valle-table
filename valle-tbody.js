@@ -6,7 +6,7 @@ export default class ValleTBody extends PolymerElement {
       <style>
         :host {
           display: table-row-group;
-        };
+        }
       </style>
 
       <slot></slot>

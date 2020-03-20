@@ -15,7 +15,7 @@ export default class ValleTd extends PolymerElement {
           font-weight: 300;
           font-size: var(--valle-td-text-size, 13px);
           color: var(--valle-td-text-color, rgba(0,0,0,.54));
-        };
+        }
       </style>
 
       <slot></slot>

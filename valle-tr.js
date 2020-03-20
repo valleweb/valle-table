@@ -6,7 +6,7 @@ export default class ValleTr extends PolymerElement {
       <style>
         :host {
           display: table-row;
-        };
+        }
       </style>
 
       <slot></slot>

@@ -14,7 +14,7 @@ export default class ValleTh extends PolymerElement {
           text-align: right;
           font-size: var(--valle-th-text-size, 13px);
           color: var(--valle-th-text-color, rgba(0,0,0,.54));
-        };
+        }
       </style>
 
       <slot></slot>

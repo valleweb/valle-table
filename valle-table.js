@@ -6,7 +6,7 @@ export default class ValleTable extends PolymerElement {
       <style>
         :host {
           display: table;
-        };
+        }
       </style>
 
       <slot></slot>

@@ -1,7 +1,7 @@
 {
   "name": "@valle/valle-table",
   "description": "Awesome valle-table - web component using Polymer 3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     "valleweb"
   ],

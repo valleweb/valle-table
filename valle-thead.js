@@ -6,7 +6,7 @@ export default class ValleTHead extends PolymerElement {
       <style>
         :host {
           display: table-header-group;
-        };
+        }
       </style>
 
       <slot></slot>
